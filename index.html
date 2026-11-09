@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <section id="menu" class="screen active">
+            <div class="title-box">
+                <span class="decoration decoration-one">✦</span>
+                <span class="decoration decoration-two">✧</span>
+
+                <p class="mini-title">DESAFIO CLÁSSICO</p>
+
+                <h1>Jogo da<br><span>Velha</span></h1>
+
+                <p class="subtitle">
+                    Escolha seu modo de jogo e mostre quem domina o tabuleiro.
+                </p>
+
+                <div class="mode-buttons">
+                    <button class="mode-btn player-mode" data-mode="player">
+                        <span class="button-icon">⚔</span>
+                        <span>
+                            <strong>Dois Jogadores</strong>
+                            <small>Jogue com um amigo</small>
+                        </span>
+                    </button>
+
+                    <button class="mode-btn machine-mode" data-mode="machine">
+                        <span class="button-icon">◉</span>
+                        <span>
+                            <strong>Contra a Máquina</strong>
+                            <small>Desafie a inteligência artificial</small>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="game" class="screen">
+
+            <header class="game-header">
+                <button id="backButton" class="back-button" aria-label="Voltar ao menu">
+                    ←
+                </button>
+
+                <div class="header-title">
+                    <span>JOGO DA</span>
+                    <strong>VELHA</strong>
+                </div>
+
+                <button id="restartButton" class="restart-small" aria-label="Reiniciar jogo">
+                    ↻
+                </button>
+            </header>
+
+            <div class="game-content">
+
+                <div class="status-area">
+                    <div class="player-indicator active-player" id="playerX">
+                        <span class="symbol">X</span>
+                        <span>Jogador X</span>
+                    </div>
+
+                    <div class="vs">VS</div>
+
+                    <div class="player-indicator" id="playerO">
+                        <span class="symbol">O</span>
+                        <span id="opponentName">Jogador O</span>
+                    </div>
+                </div>
+
+                <div class="message" id="message">
+                    Vez do jogador X
+                </div>
+
+                <div class="board" id="board">
+
+                    <button class="cell" data-index="0"></button>
+                    <button class="cell" data-index="1"></button>
+                    <button class="cell" data-index="2"></button>
+
+                    <button class="cell" data-index="3"></button>
+                    <button class="cell" data-index="4"></button>
+                    <button class="cell" data-index="5"></button>
+
+                    <button class="cell" data-index="6"></button>
+                    <button class="cell" data-index="7"></button>
+                    <button class="cell" data-index="8"></button>
+
+                </div>
+
+                <div class="scoreboard">
+                    <div class="score">
+                        <span class="score-symbol x-score">X</span>
+                        <div>
+                            <small>Jogador X</small>
+                            <strong id="scoreX">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="score-divider"></div>
+
+                    <div class="score">
+                        <span class="score-symbol o-score">O</span>
+                        <div>
+                            <small id="scoreOName">Jogador O</small>
+                            <strong id="scoreO">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="playAgainButton" class="play-again">
+                    Jogar novamente
+                </button>
+
+            </div>
+        </section>
+
+        <div id="resultModal" class="modal">
+            <div class="modal-card">
+
+                <div class="result-icon" id="resultIcon">★</div>
+
+                <p class="result-label">FIM DE JOGO</p>
+
+                <h2 id="resultTitle">Vitória!</h2>
+
+                <p id="resultMessage">O jogador X venceu a partida.</p>
+
+                <div class="modal-buttons">
+                    <button id="modalAgainButton" class="primary-button">
+                        Jogar novamente
+                    </button>
+
+                    <button id="modalMenuButton" class="secondary-button">
+                        Voltar ao menu
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
